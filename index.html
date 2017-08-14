@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://rexray.codedellemc.com/xmlrpc.php">
+
+<title>FAQ - REX-Ray</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v4.8 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://rexray.codedellemc.com/faq/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="FAQ - REX-Ray" />
+<meta property="og:description" content="FAQ What makes REX-Ray different than others? REX-Ray prides itself being simple and focused. It is also an experienced tool inclusive of architecture choices and enterprise features. It leverages libStorage to ensure a consistent user experience, interoperability with cloud native tools, and integration to external storage platforms. REX-Ray’s build process includes a mature CI/CD pipeline &hellip;" />
+<meta property="og:url" content="https://rexray.codedellemc.com/faq/" />
+<meta property="og:site_name" content="REX-Ray" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FAQ What makes REX-Ray different than others? REX-Ray prides itself being simple and focused. It is also an experienced tool inclusive of architecture choices and enterprise features. It leverages libStorage to ensure a consistent user experience, interoperability with cloud native tools, and integration to external storage platforms. REX-Ray’s build process includes a mature CI/CD pipeline [&hellip;]" />
+<meta name="twitter:title" content="FAQ - REX-Ray" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="REX-Ray &raquo; Feed" href="https://rexray.codedellemc.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="REX-Ray &raquo; Comments Feed" href="https://rexray.codedellemc.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/rexray.codedellemc.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='sydney-bootstrap-css'  href='https://rexray.codedellemc.com/wp-content/themes/sydney/css/bootstrap/bootstrap.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='siteorigin-panels-front-css'  href='https://rexray.codedellemc.com/wp-content/plugins/siteorigin-panels/inc/../css/front-flex.css?ver=2.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='https://rexray.codedellemc.com/wp-content/themes/sydney/style.css?ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='sydney-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C400italic%2C600%7CRoboto%3A300%2C400%2C500%2C600' type='text/css' media='all' />
+<link rel='stylesheet' id='sydney-style-css'  href='https://rexray.codedellemc.com/wp-content/themes/sydneychildtheme/style.css?ver=20170504' type='text/css' media='all' />
+<style id='sydney-style-inline-css' type='text/css'>
+body, #mainnav ul ul a { font-family:'Roboto', sans-serif!important;}
+h1, h2, h3, h4, h5, h6, #mainnav ul li a, .portfolio-info, .roll-testimonials .name, .roll-team .team-content .name, .roll-team .team-item .team-pop .name, .roll-tabs .menu-tab li a, .roll-testimonials .name, .roll-project .project-filter li a, .roll-button, .roll-counter .name-count, .roll-counter .numb-count button, input[type="button"], input[type="reset"], input[type="submit"] { font-family:'Roboto', sans-serif;}
+.site-title { font-size:32px; }
+.site-description { font-size:16px; }
+#mainnav ul li a { font-size:14px; }
+h1 { font-size:22px; }
+h2 { font-size:20px; }
+h3 { font-size:18px; }
+h4 { font-size:16px; }
+h5 { font-size:14px; }
+h6 { font-size:14px; }
+body { font-size:14px; }
+.header-image { background-size:cover;}
+.header-image { height:300px; }
+.widget-area .widget_fp_social a,#mainnav ul li a:hover, .sydney_contact_info_widget span, .roll-team .team-content .name,.roll-team .team-item .team-pop .team-social li:hover a,.roll-infomation li.address:before,.roll-infomation li.phone:before,.roll-infomation li.email:before,.roll-testimonials .name,.roll-button.border,.roll-button:hover,.roll-icon-list .icon i,.roll-icon-list .content h3 a:hover,.roll-icon-box.white .content h3 a,.roll-icon-box .icon i,.roll-icon-box .content h3 a:hover,.switcher-container .switcher-icon a:focus,.go-top:hover,.hentry .meta-post a:hover,#mainnav > ul > li > a.active, #mainnav > ul > li > a:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .text-color, .social-menu-widget a, .social-menu-widget a:hover, .archive .team-social li a, a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:#057db7}
+.project-filter li a.active, .project-filter li a:hover,.preloader .pre-bounce1, .preloader .pre-bounce2,.roll-team .team-item .team-pop,.roll-progress .progress-animate,.roll-socials li a:hover,.roll-project .project-item .project-pop,.roll-project .project-filter li.active,.roll-project .project-filter li:hover,.roll-button.light:hover,.roll-button.border:hover,.roll-button,.roll-icon-box.white .icon,.owl-theme .owl-controls .owl-page.active span,.owl-theme .owl-controls.clickable .owl-page:hover span,.go-top,.bottom .socials li:hover a,.sidebar .widget:before,.blog-pagination ul li.active,.blog-pagination ul li:hover a,.content-area .hentry:after,.text-slider .maintitle:after,.error-wrap #search-submit:hover,#mainnav .sub-menu li:hover > a,#mainnav ul li ul:after, button, input[type="button"], input[type="reset"], input[type="submit"], .panel-grid-cell .widget-title:after { background-color:#057db7}
+.roll-socials li a:hover,.roll-socials li a,.roll-button.light:hover,.roll-button.border,.roll-button,.roll-icon-list .icon,.roll-icon-box .icon,.owl-theme .owl-controls .owl-page span,.comment .comment-detail,.widget-tags .tag-list a:hover,.blog-pagination ul li,.hentry blockquote,.error-wrap #search-submit:hover,textarea:focus,input[type="text"]:focus,input[type="password"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="time"]:focus,input[type="week"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="color"]:focus, button, input[type="button"], input[type="reset"], input[type="submit"], .archive .team-social li a { border-color:#057db7}
+.site-header.float-header { background-color:rgba(0,0,0,0.9);}
+@media only screen and (max-width: 1024px) { .site-header { background-color:#000000;}}
+.site-title a, .site-title a:hover { color:#ffffff}
+.site-description { color:#ffffff}
+#mainnav ul li a, #mainnav ul li::before { color:#ffffff}
+#mainnav .sub-menu li a { color:#ffffff}
+#mainnav .sub-menu li a { background:#1c1c1c}
+.text-slider .maintitle, .text-slider .subtitle { color:#ffffff}
+body { color:#767676}
+#secondary { background-color:#ffffff}
+#secondary, #secondary a, #secondary .widget-title { color:#767676}
+.footer-widgets { background-color:#000000}
+.btn-menu { color:#ffffff}
+#mainnav ul li a:hover { color:#d65050}
+.site-footer { background-color:#000000}
+.site-footer,.site-footer a { color:#666666}
+.overlay { background-color:#000000}
+.page-wrap { padding-top:83px;}
+.page-wrap { padding-bottom:100px;}
+.slide-inner { display:none;}
+.slide-inner.text-slider-stopped { display:block;}
+@media only screen and (max-width: 1025px) {		
+			.mobile-slide {
+				display: block;
+			}
+			.slide-item {
+				background-image: none !important;
+			}
+			.header-slider {
+			}
+			.slide-item {
+				height: auto !important;
+			}
+			.slide-inner {
+				min-height: initial;
+			} 
+		}
+
+</style>
+<link rel='stylesheet' id='sydney-font-awesome-css'  href='https://rexray.codedellemc.com/wp-content/themes/sydney/fonts/font-awesome.min.css?ver=4.7.5' type='text/css' media='all' />
+<!--[if lte IE 9]>
+<link rel='stylesheet' id='sydney-ie9-css'  href='https://rexray.codedellemc.com/wp-content/themes/sydney/css/ie9.css?ver=4.7.5' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://rexray.codedellemc.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.9' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.1.10 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	var disableStr = 'ga-disable-UA-57022521-6';
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-57022521-6', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('require', 'linkid', 'linkid.js');
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"https:\/\/rexray.codedellemc.com","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=6.1.10'></script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://rexray.codedellemc.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://rexray.codedellemc.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://rexray.codedellemc.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.5" />
+<link rel='shortlink' href='https://wp.me/P8ushG-r' />
+<link rel="alternate" type="application/json+oembed" href="https://rexray.codedellemc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frexray.codedellemc.com%2Ffaq%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://rexray.codedellemc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frexray.codedellemc.com%2Ffaq%2F&#038;format=xml" />
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<style type='text/css'>img#wpstats{display:none}</style>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<meta name="title" content="FAQ | REX-Ray" />
+	<style type="text/css">
+		.header-image {
+			background-image: url(https://rexray.codedellemc.com/wp-content/uploads/2017/01/Polly-and-REX-Ray-Engineering.jpg);
+			display: block;
+		}
+		@media only screen and (max-width: 1024px) {
+			.header-inner {
+				display: block;
+			}
+			.header-image {
+				background-image: none;
+				height: auto !important;
+			}		
+		}
+	</style>
+					<style type="text/css" media="all"
+				       id="siteorigin-panels-layouts-head">/* Layout 27 */ #pgc-27-0-0 { width:100%;width:calc(100% - ( 0 * 30px ) ) } #pl-27 .so-panel , #pl-27 .so-panel:last-child { margin-bottom:0px } @media (max-width:780px){ #pg-27-0.panel-no-style, #pg-27-0.panel-has-style > .panel-row-style { -webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column } #pg-27-0 .panel-grid-cell { margin-right:0 } #pg-27-0 .panel-grid-cell { width:100% } #pl-27 .panel-grid-cell { padding:0 } #pl-27 .panel-grid .panel-grid-cell-empty { display:none } #pl-27 .panel-grid .panel-grid-cell-mobile-last { margin-bottom:0px }  } </style><link rel="icon" href="https://rexray.codedellemc.com/wp-content/uploads/2017/01/cropped-rex-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://rexray.codedellemc.com/wp-content/uploads/2017/01/cropped-rex-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://rexray.codedellemc.com/wp-content/uploads/2017/01/cropped-rex-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://rexray.codedellemc.com/wp-content/uploads/2017/01/cropped-rex-favicon-270x270.png" />
+			<style type="text/css" id="wp-custom-css">
+				/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body{
+    font-weight: 300;
+    font: 300 18px/1.7 'Roboto', sans-serif;
+}
+h1{
+    font-size: 40px;
+    font-weight: 300;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 300;
+}
+h3, .panel-grid-cell .widget-title, .roll-icon-list .content h3{
+    font-size: 25px;
+    font-weight: 300;
+    font: 300 25px/1.1;
+}
+.panel-grid-cell .widget-title{font-size:35px;}
+h4{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+h5{
+    font-size: 20px;
+    font-weight: 300;
+}
+h6{
+    font-weight: 800;
+    font-size: 12px;
+}
+.roll-button.border, .roll-button{
+    background: #057db7;
+    color: #fff;
+font-weight:300;
+text-transform:none;
+font-size:18px;
+padding: 0 5%;
+line-height:70px;
+border-radius:0;
+border:none;}
+.pd10 .roll-button, .pd10.roll-button.border{
+padding:0 10%;
+}
+.roll-icon-box .content h3{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.roll-button:hover, .roll-button.border:hover{
+background:#066796;
+color:#fff;
+}
+.fluid-width-video-wrapper{
+min-height: 433px;
+}
+#mainnav ul li a{
+font-weight:300;}
+.panel-grid-cell .widget-title::after{display:none;}
+.social-ic{
+    display: inline-block;
+    text-align: center;
+    color: #fff;margin:0 5px;
+line-height:30px;
+}
+.fa:before{
+ font-size:30px;
+}
+
+.social-ic.twitter{
+    color: #55acee;
+}
+.social-ic.tube{
+    color: #bb0000;
+}
+.social-ic.wp{
+    color: #007bb5;
+}
+.roll-icon-box .icon, .roll-icon-list .icon{ 
+    background:transparent;
+border:none;
+}
+.roll-icon-list .icon .fa:before, .roll-icon-box .icon .fa:before{
+font-size:50px;}
+.footer-widgets .widget-title{
+font-weight:300;
+color:#fff;
+}
+			</style>
+		</head>
+
+<body class="page-template page-template-page-templates page-template-page_front-page page-template-page-templatespage_front-page-php page page-id-27 siteorigin-panels siteorigin-panels-before-js">
+
+	<div class="preloader">
+	    <div class="spinner">
+	        <div class="pre-bounce1"></div>
+	        <div class="pre-bounce2"></div>
+	    </div>
+	</div>
+	
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-wrap">
+            <div class="container">
+                <div class="row">
+				<div class="col-md-4 col-sm-8 col-xs-12">
+		        					<a href="https://rexray.codedellemc.com/" title="REX-Ray"><img class="site-logo" src="https://rexray.codedellemc.com/wp-content/uploads/2017/01/rr-top-left.png" alt="REX-Ray" /></a>
+		        				</div>
+				<div class="col-md-8 col-sm-4 col-xs-12">
+					<div class="btn-menu"></div>
+					<nav id="mainnav" class="mainnav" role="navigation">
+						<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-75"><a href="https://rexray.codedellemc.com/">Home</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://rexray.codedellemc.com/about/">About</a></li>
+<li id="menu-item-436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-436"><a href="/about/#refarchitecture">Reference Architecture</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="/#get-started">Get Started</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-27 current_page_item menu-item-78"><a href="https://rexray.codedellemc.com/faq/">FAQ</a></li>
+<li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79"><a href="https://github.com/codedellemc/rexray">GitHub</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-80"><a href="https://rexray.readthedocs.io/en/stable/">Documentation</a></li>
+</ul></div>					</nav><!-- #site-navigation -->
+				</div>
+				</div>
+			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	
+	<div class="sydney-hero-area">
+				<div class="header-image">
+			<div class="overlay"></div>			<img class="header-inner" src="https://rexray.codedellemc.com/wp-content/uploads/2017/01/Polly-and-REX-Ray-Engineering.jpg" width="1440" alt="REX-Ray" title="REX-Ray">
+		</div>
+		
+			</div>
+
+	
+	<div id="content" class="page-wrap">
+		<div class="container content-wrapper">
+			<div class="row">	
+	<div id="primary" class="fp-content-area">
+		<main id="main" class="site-main" role="main">
+
+			<div class="entry-content">
+									<div id="pl-27"  class="panel-layout" ><div id="pg-27-0"  class="panel-grid panel-has-style" ><div style="padding: 100px 0; " data-overlay="true" data-overlay-color="#000000" class="panel-row-style panel-row-style-for-27-0" ><div id="pgc-27-0-0"  class="panel-grid-cell" ><div id="panel-27-0-0-0" class="so-panel widget widget_sydney_services_type_b sydney_services_b_widget panel-first-child panel-last-child" data-index="0" ><div style="text-align: left;" data-title-color="#443f3f" data-headings-color="#443f3f" class="panel-widget-style panel-widget-style-for-27-0-0-0" >			<h3 class="widget-title">FAQ</h3>
+				<div class="roll-icon-list">
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					What makes REX-Ray different than others?																			</h3>
+																	
+										<p>REX-Ray prides itself being simple and focused. It is also an experienced tool inclusive of architecture choices and enterprise features. It leverages libStorage to ensure a consistent user experience, interoperability with cloud native tools, and integration to external storage platforms. REX-Ray’s build process includes a mature CI/CD pipeline that does extensive automated testing for community and team contributions.</p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					What&#8217;s the difference between REX-Ray and libStorage?																			</h3>
+																	
+										<p>REX-Ray is a container storage orchestration engine. It ensures the front-end interoperability with cloud native orchestrators and runtimes. It leverages a cloud native storage library called <a href="https://github.com/codedellemc/libstorage">libStorage</a> to perform back-end storage orchestration and volume lifecycle functions irrespective of storage platform. </p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					What is libStorage?																			</h3>
+																	
+										<p>libStorage is a mature and proven storage library, framework, and implementation of a storage interface for cloud native tools. It provides reference client and server implementations that handle communication using a defined controller API. libStorage is stateless, abstracting at a control-plane layer while leaving storage resource identifiers in their original form. It is not considered middleware itself but can be embedded in middleware tools such as REX-Ray to perform storage functions.<br />
+<br />
+libStorage enables a client/server architecture where a centralized service (the controller) accepts requests (from the client) to jointly perform storage orchestration functionality. The client/server architecture can take multiple forms. The standalone version packages the client and server together for a single stateless engine. The centralized version can segregate simple clients to endpoint worker nodes and the server can be centralized to contain specific storage platform information including credentials.</p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					Can REX-Ray Support Multiple Storage Providers?																			</h3>
+																	
+										<p>Yes! The controller can include drivers for multiple storage platforms. It takes different configuration parameters to enable specific platforms. The <a href="https://rexray.readthedocs.io/en/stable/user-guide/config/#example-with-modules">modules section in the configuration file</a> enables multiple storage drivers to be activated per controller.<br />
+<br />
+See the <a href="https://hub.docker.com/u/rexray/">Docker managed plugins for REX-Ray</a>, which is the REX-Ray engine packaged in a container image specifically for individual drivers, to deploy multiple plugins. All configuration for this method is performed through environment variables</p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					What language is REX-Ray written in?																			</h3>
+																	
+										<p>Golang of course. Go is friendly to open source development, and simple to operate since it can be deployed without dependencies. We love it.</p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					What&#8217;s up with the dog logo?																			</h3>
+																	
+										<p>In the early days of {code}, the container persistence projects had an overarching theme called “Dogged”. We were <a href="https://blog.codedellemc.com/2015/04/30/dogged-ly-pursuing-persistent-data-for-containers-with-rex-ray/">dogged-ly pursuing persistent data for containers</a>, which meant that each project name held true to the dog theme; REX-Ray was one of these project names. How did that name come about? Well, REX because it’s a standard dog name. “Come here Rex! Good dog Rex!”. The X-Ray portion, has its own story. Today, when using REX-Ray, a configuration file or set of environment variables instruct REX-Ray what storage platforms to use with the accompanying credentials. However, in the beginning, REX-Ray performed a process of “introspection” when the service was executed. This meant a series of tests ran and automatically discovered which type of storage platform it had access to. This is where the X-Ray comes in. Hence:<br />
+<br />
+REX + X-Ray = REX-Ray.</p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					What&#8217;s the history of REX-Ray?																			</h3>
+																	
+										<p><a href="https://github.com/clintonskitson">Clint Kitson</a> and <a href="https://github.com/akutz">Andrew Kutz</a> are the founders of REX-Ray and libStorage. Clint worked with the Docker team to learn about and contribute to the new volume driver plugin interface being developed. After several weeks of creating storage drivers for initial storage platforms, the initial REX-Ray project came to be. Andrew soon took over the reigns of the project with his extensive framework and storage experience. With an eye towards interoperability, the first cloud native storage library was created, libStorage.<br />
+<br />
+As an open source project, REX-Ray has always been (and will continue to be) built with community contribution and collaboration. </p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					Are there any examples or reference architectures?																			</h3>
+																	
+										<p>Yes there is! Look at the <a href="https://rexray.codedellemc.com/about/#refarchitecture">Reference Architecture</a> section to learn more.</p>
+																	</div><!--.info-->	
+							</div>
+						</div>
+																							<div class="service clearfix ">
+							<div class="list-item clearfix">
+											
+									<div class="icon">
+																					<i class="fa fa-question-circle"></i>																			</div>
+																<div class="content">
+									<h3>
+																					Who is {code}?																			</h3>
+																	
+										<p>{code} by Dell EMC is a group of passionate open source engineers and advocates building community around software-based infrastructure.</p>
+<ul>
+<li>Contribute to and maintaining open source projects</li>
+<li>Community engagement</li>
+<li>Technical solution leadership</li>
+</ul>
+																	</div><!--.info-->	
+							</div>
+						</div>
+									</div>	
+
+								
+	</div></div></div></div></div></div>							</div><!-- .entry-content -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+			</div>
+		</div>
+	</div><!-- #content -->
+
+	
+			
+
+	
+	<div id="sidebar-footer" class="footer-widgets widget-area" role="complementary">
+		<div class="container">
+							<div class="sidebar-column col-md-3">
+					<aside id="text-2" class="widget widget_text"><h3 class="widget-title">Get Information</h3>			<div class="textwidget"><ul>
+<li><a href="https://codedellemc.com/"><img src="/wp-content/uploads/2017/01/code-icon-clear.png" width="30px" hspace="5"></a><a href="https://codedellemc.com/">{code} Home and Projects</a></li>
+<li>
+<a href="https://blog.codedellemc.com/"><span class="social-ic wp"><i class="fa fa-comment" aria-hidden="true"></i></span></a><a href="https://blog.codedellemc.com/">{code} Blog</a>
+</li>
+<li>
+<a href="https://visitor.r20.constantcontact.com/d.jsp?llr=qipf4rsab&p=oi&m=1119442091280&sit=7hqmx8ijb&f=928bf5a1-912d-4bcd-bcf4-422e2f9acb40"><img src="/wp-content/uploads/2017/01/newsletter.png" width="30px" hspace="5"></a><a href="https://visitor.r20.constantcontact.com/d.jsp?llr=qipf4rsab&p=oi&m=1119442091280&sit=7hqmx8ijb&f=928bf5a1-912d-4bcd-bcf4-422e2f9acb40">{code} Weekly Newsletter</a>
+</li>
+<li><a href="https://www.slideshare.net/EMCCODE"><span class="social-ic wp"><i class="fa fa-slideshare" aria-hidden="true"></i></span></a><a href="https://www.slideshare.net/EMCCODE">{code} Presentations on SlideShare</a>
+</li>
+</ul></div>
+		</aside>				</div>
+				
+							<div class="sidebar-column col-md-3">
+					<aside id="text-3" class="widget widget_text"><h3 class="widget-title">Get Support</h3>			<div class="textwidget"><ul>
+<li><a href="https://github.com/codedellemc/rexray/issues">
+<span class="social-ic git"><i class="fa fa-github" aria-hidden="true"></i>
+</span>
+</a><a class="adjust" href="https://github.com/codedellemc/rexray/issues">REX-Ray Issues on GitHub</a></li>
+<li><a href="https://community.codedellemc.com/"><img src="/wp-content/uploads/2017/01/community.png" width="30px" hspace="5"></a> <a href="https://community.codedellemc.com/">#project-rexray</a></li>
+</ul></div>
+		</aside>				</div>
+				
+							<div class="sidebar-column col-md-3">
+					<aside id="text-4" class="widget widget_text"><h3 class="widget-title">Get Social</h3>			<div class="textwidget"><ul>
+<li><a href="https://twitter.com/codeDellEMC"><span class="social-ic twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a><a class="adjust" href="https://twitter.com/codedellemc">@codeDellEMC</a></li>
+<li><a href="https://community.codedellemc.com/"><img src="/wp-content/uploads/2017/01/community.png" width="30px" hspace="5"></a> <a href="https://community.codedellemc.com/"> {code} Community</a></li>
+<li><a href="https://www.youtube.com/watch?v=wUWvQ3d3O_k&feature=youtu.be&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt"><span class="social-ic tube"><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a> <a href="https://www.youtube.com/watch?v=wUWvQ3d3O_k&feature=youtu.be&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt">{code} YouTube</a></li>
+</ul></div>
+		</aside>				</div>
+				
+							<div class="sidebar-column col-md-3">
+					<aside id="text-7" class="widget widget_text"><h3 class="widget-title">A Project From:</h3>			<div class="textwidget"><a href="https://codedellemc.com/">
+<img src="/wp-content/uploads/2017/03/Dell-EMC-Logo_Horizontal_web_RGB.png" width="75%" hspace="5%"></div>
+		</aside>				</div>
+				
+		</div>	
+	</div>
+		
+    <a class="go-top"><i class="fa fa-angle-up"></i></a>
+		
+	<footer id="colophon" class="site-footer" role="contentinfo">
+<div class="container copyright">
+			<div class="col-md-8">
+				<p style="line-height: 16px;">{code} by Dell EMC is an open source initiative focused on building a community around software-based infrastructure.</p>
+				</div>
+			<div class="col-md-4 text-right">
+				<p style="line-height: 16px;">© Copyright 2017 Dell Inc. or its subsidiaries. All Rights Reserved.</p>
+			</div>
+				<a href="https://codedellemc.com/"></a>
+	</div>
+		<div class="site-info container">
+		
+		</div><!-- .site-info -->
+		
+	</footer><!-- #colophon -->
+
+	
+</div><!-- #page -->
+
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201724'></script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-content/themes/sydney/js/scripts.js?ver=4.7.5'></script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-content/themes/sydney/js/main.min.js?ver=20170504'></script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-content/themes/sydney/js/skip-link-focus-fix.js?ver=20130115'></script>
+<script type='text/javascript' src='https://rexray.codedellemc.com/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
+<script type="text/javascript">document.body.className = document.body.className.replace("siteorigin-panels-before-js","");</script><script type='text/javascript' src='https://stats.wp.com/e-201724.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.9',blog:'125469256',post:'27',tz:'-5',srv:'rexray.codedellemc.com'} ]);
+	_stq.push([ 'clickTrackerInit', '125469256', '27' ]);
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"46fa6ffa74","applicationID":"29057411","transactionName":"ZgQBZkJVXBVYUk1eDV9OIlFEXV0IFkFYUAduBxFdXkAfFlhWXA==","queueTime":0,"applicationTime":423,"atts":"SkMCEApPTxs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
