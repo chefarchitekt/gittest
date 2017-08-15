@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 //test stash
+//test drop stash
 class App extends Component {
   render() {
     return (
